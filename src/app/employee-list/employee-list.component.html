@@ -1,0 +1,40 @@
+
+<h2>Employee List &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button (click)="sortNames()" class="btn btn-dark">Sort Employees by Name</button>
+</h2>
+<div class="search-hero topnav float-right">
+    <select [(ngModel)]="searchText" name="searchText">
+      <option value="">All Details</option>
+      <option value="Java">Java</option>
+      <option value="Devops" >Devops</option>
+      <option value="Dot Net">Dot Net</option>
+      <option value="Data">Data</option>
+    </select>
+  </div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Id</th>
+            <th>Batch</th>
+            <th>Actions</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let employee of employees ">
+       <td>{{employee.firstName}}</td>
+       <td>{{employee.lastName}}</td>
+       <td>{{employee.emailId}}</td>
+       <td>{{employee.role}}</td>
+       <td>
+        <button (click)="updateEmployee(employee.id)" class="btn btn-warning">Update</button>&nbsp;&nbsp;
+        
+        <button (click)="deleteEmployee(employee.id)" class="btn btn-danger"  style="margin: left 10px">Delete</button>&nbsp;&nbsp;
+
+        <button (click)="sweetAlert(employee.id)" class="btn btn-success"  style="margin: left 10px">View</button>
+       </td>
+        </tr>
+    </tbody>
+</table>

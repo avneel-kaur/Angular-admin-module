@@ -1,0 +1,53 @@
+<h2>Add Employee</h2>
+
+<div class="modal-body">
+    <form #addForm="ngForm" (ngSubmit)="onAddEmployee(addForm)">
+        <div class="form-group">
+            <label for="id">Id</label>
+            <input type="text" ngModel name="id" class="form-control" id="id" [(ngModel)]=employee.id required #fname="ngModel"   [class.is-invalid]="fname.invalid && fname.touched" placeholder="Employee Id">
+            
+        </div>
+        <small class="text-danger" [class.d-none]="fname.valid || fname.untouched">Id is required</small> <br>
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" ngModel name="firstName" class="form-control" id="firstName" [(ngModel)]=employee.firstName required #id="ngModel" [class.is-invalid]="id.invalid && id.touched" placeholder="Employee first Name">
+            
+        </div>
+        <small class="text-danger" [class.d-none]="id.valid || id.untouched">First Name is required</small> <br>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" ngModel name="lastName" class="form-control" id="lasttName" [(ngModel)]=employee.lastName placeholder="Employee Last Name">
+
+        </div>
+        <div class="form-group">
+            <label for="mobileNumber">Mobile Number</label>
+            <input type="text" ngModel name="mobileNumber" class="form-control" id="mobileNumber" [(ngModel)]=employee.mobileNumber placeholder="Employee Mobile Number">
+            
+        </div>
+        <div class="form-group">
+            <label for="role">Role</label>
+            <input type="text" ngModel name="role" class="form-control" id="role" [(ngModel)]=employee.role placeholder="Employee Role">
+            
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" ngModel name="city" class="form-control" id="city" [(ngModel)]=employee.city placeholder="Employee City">
+            
+        </div>
+        <div class="form-group">
+            <label for="emailId">Email Id</label>
+            <input type="text" ngModel name="emailId" class="form-control" id="emailId" [(ngModel)]=employee.emailId placeholder="Employee EmailId">
+            
+        </div>
+        <div class="form-group">
+            <label for="yop">Years of experience</label>
+            <input type="text" ngModel name="yop" class="form-control" id="yop"  [(ngModel)]=employee.yop placeholder="Employee Years of Experience">
+            
+        </div>
+
+        <button class="btn btn-success" type="submit">Submit</button>
+    </form>
+</div>
+   
+
+

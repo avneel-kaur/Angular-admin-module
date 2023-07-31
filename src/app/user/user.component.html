@@ -1,0 +1,19 @@
+<p>user works!</p>
+<div class="modal-body">
+    <form #addForm="ngForm" (ngSubmit)="onAdmin(employees.id)">
+        
+        <div class="form-group">
+            <label for="name">User Id</label>
+            <input type="text" ngModel name="id" class="form-control" id="id" [(ngModel)]=employees.id placeholder="User Id">
+            
+        </div>
+        <div class="form-group">
+            <label for="emailId">Email Id</label>
+            <input type="text" ngModel name="emailId" class="form-control" id="emailId" [(ngModel)]=employees.emailId placeholder="User Email Id">
+            
+        </div>
+       
+
+        <button class="btn btn-success" type="submit"  (click)="onAdmin(employees.id)">Submit</button>
+      
+        </form>

@@ -1,0 +1,26 @@
+<p>super-admin works!</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>PASSWORD</th>
+            <th>EMAIL</th>
+            <th>Actions</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let employee of admins">
+       <td>{{employee.id}}</td>
+       <td>{{employee.name}}</td>
+       <td>{{employee.password}}</td>
+       <td>{{employee.email}}</td>
+       <td>
+        <button (click)="delete(employee.id)" class="btn btn-warning">Remove</button>&nbsp;&nbsp;
+        
+       
+       </td>
+        </tr>
+    </tbody>
+</table>
